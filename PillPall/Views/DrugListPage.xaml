@@ -3,9 +3,10 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:models="clr-namespace:PillPall.Models"
              x:Class="PillPall.Views.DrugListPage"
-             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
+             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls" xmlns:views="clr-namespace:PillPall.Views"
+             x:DataType="views:DrugListPage"
              ios:Page.UseSafeArea="True"
-             Title="PillPall">
+             BackgroundColor="{StaticResource Primary}">
     <Grid RowDefinitions="*,Auto">
         <CollectionView 
                   VerticalOptions="Fill"
@@ -16,7 +17,8 @@
                 <DataTemplate x:DataType="models:DrugItem">
                         <Grid ColumnDefinitions="*, Auto" Padding="20">
                             <Label Text="{Binding Name}"
-                                   VerticalTextAlignment="Center"/>
+                                   VerticalTextAlignment="Center"
+                                   FontSize="{StaticResource ParagraphFontSize}"/>
                         </Grid>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

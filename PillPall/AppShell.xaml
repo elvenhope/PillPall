@@ -4,12 +4,74 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:views="clr-namespace:PillPall.Views"
-    Shell.FlyoutBehavior="Disabled">
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="False"
+    FlyoutWidth="200"
+    FlyoutBackgroundColor="{StaticResource Tertiary}">
 
-    <ShellContent
-        Title="Drugs"
-        ContentTemplate="{DataTemplate views:DrugListPage}"
-        Route="DrugList" />
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout Padding="20" HeightRequest="150">
+            <Image Source="logo.png"/>
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid RowSpacing="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                </Grid.RowDefinitions>
+
+                <HorizontalStackLayout Grid.Column="0" HorizontalOptions="Center">
+                <Border
+                    BackgroundColor="{StaticResource lightPurple}"
+                    StrokeShape="RoundRectangle 10,10,10,10" >
+
+                    <Grid  Padding="10, 5, 5, 5">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="80"/>
+                            <ColumnDefinition Width="80"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Label
+                            Text="{Binding Title}"
+                            FontSize="{StaticResource ParagraphFontSize}"
+                            VerticalTextAlignment="Center"
+                            HorizontalTextAlignment="Start"
+                            Grid.Column="1" Grid.Row="0"/>
+                        <Image
+                            Source="{Binding FlyoutIcon}"
+                            WidthRequest="64"
+                            HeightRequest="64"
+                            HorizontalOptions="Start"
+                            Grid.Column="0" Grid.Row="0" />
+                    </Grid>
+                </Border>
+                </HorizontalStackLayout>
+            </Grid>
+
+        </DataTemplate>
+    </Shell.ItemTemplate>
+
+    <FlyoutItem Title="Home" FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent
+            Title="Home"
+            ContentTemplate="{DataTemplate views:MainPage}"
+            Route="MainPage"
+            Icon="home.png" />
+        <ShellContent
+            Title="Drugs"
+            ContentTemplate="{DataTemplate views:DrugListPage}"
+            Route="DrugList"
+            Icon="add.png" />
+    </FlyoutItem>
 
 </Shell>
 

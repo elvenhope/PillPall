@@ -15,7 +15,13 @@ public static class MauiProgram
 			{
 				fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
 				fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
-			});
+				//fonts.AddFont("YoungSerif-Regular.ttf", "YoungSerifRegular");
+				fonts.AddFont("NanumGothic-Bold.ttf", "NanumGothicBold");
+                fonts.AddFont("NanumGothic-Regular.ttf", "NanumGothicRegular");
+                fonts.AddFont("NanumGothic-ExtraBold.ttf", "NanumGothicExtraBold");
+            });
+
+		builder.Services.AddSingleton<MainPage>();
 
         builder.Services.AddSingleton<DrugListPage>();
         builder.Services.AddTransient<DrugItemPage>();

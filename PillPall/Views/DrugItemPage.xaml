@@ -4,14 +4,16 @@
              x:Class="PillPall.Views.DrugItemPage"
              xmlns:models="clr-namespace:PillPall.Models"
              x:DataType="models:DrugItem"
+             BackgroundColor="{StaticResource Primary}"
              Title="{Binding Name}">
-    <ScrollView>
+    <ScrollView BackgroundColor="{StaticResource Primary}">
         <VerticalStackLayout Padding="20"
                              Spacing="10"
-                             VerticalOptions="StartAndExpand">
+                             VerticalOptions="StartAndExpand"
+                             BackgroundColor="{StaticResource Primary}">
             <Label Text="Name" />
             <Entry Text="{Binding Name}" />
-            <Label Text="Notes" />
+            <Label Text="Type" />
             <Entry Text="{Binding Type}" />
             <!--<Label Text="Done" />
             <Switch IsToggled="{Binding Done}" />-->

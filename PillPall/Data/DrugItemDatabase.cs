@@ -14,6 +14,7 @@ namespace PillPall.Data
                 return;
 
             Database = new SQLiteAsyncConnection(Constants.DatabasePath, Constants.Flags);
+            await Database.EnableWriteAheadLoggingAsync();
             var result = await Database.CreateTableAsync<DrugItem>();
         }
 

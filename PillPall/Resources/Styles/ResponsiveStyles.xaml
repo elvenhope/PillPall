@@ -6,6 +6,6 @@
          Default="24" Phone="32" Tablet="32" Desktop="64"/>
 
     <OnIdiom x:Key="ParagraphFontSize" x:TypeArguments="x:Double" 
-         Default="14" Phone="17" Tablet="18" Desktop="18"/>
+         Default="14" Phone="17" Tablet="17" Desktop="17"/>
 
 </ResourceDictionary>

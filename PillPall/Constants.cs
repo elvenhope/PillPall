@@ -3,7 +3,7 @@ namespace PillPall
 {
 	public static class Constants
 	{
-        public const string DatabaseFilename = "DrugItemSQLite.db3";
+        public const string DatabaseFilename = "PillPallSQLite.db3";
 
         public const SQLite.SQLiteOpenFlags Flags =
             // open the database in read/write mode

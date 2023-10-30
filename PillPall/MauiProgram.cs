@@ -23,10 +23,14 @@ public static class MauiProgram
 
 		builder.Services.AddSingleton<MainPage>();
 
+		builder.Services.AddSingleton<DateListPage>();
+		builder.Services.AddTransient<DateItemPage>();
+
         builder.Services.AddSingleton<DrugListPage>();
         builder.Services.AddTransient<DrugItemPage>();
 
         builder.Services.AddSingleton<DrugItemDatabase>();
+        builder.Services.AddSingleton<DateItemDatabase>();
 
 #if DEBUG
         builder.Logging.AddDebug();

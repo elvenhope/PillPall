@@ -71,6 +71,11 @@
             ContentTemplate="{DataTemplate views:DrugListPage}"
             Route="DrugList"
             Icon="add.png" />
+        <ShellContent
+            Title="Dates"
+            ContentTemplate="{DataTemplate views:DateListPage}"
+            Route="DateList"
+            Icon="notes.png" />
     </FlyoutItem>
 
 </Shell>

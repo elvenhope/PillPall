@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.ObjectModel;
 using SQLite;
+using SQLiteNetExtensions.Attributes;
 
 namespace PillPall.Models
 {
@@ -11,7 +12,14 @@ namespace PillPall.Models
         public string DayOfWeek { get; set; }
         public TimeSpan Time { get; set; }
         public string Dose { get; set; }
+        [ForeignKey(typeof(DrugItem))]
         public int DrugID { get; set; }
+        public string DrugName { get; set; }
+
+        public DateItem()
+        {
+
+        }
     }
 }
 

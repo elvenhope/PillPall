@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.Logging;
 using PillPall.Data;
+using PillPall.ViewModels;
 using PillPall.Views;
 
 namespace PillPall;
@@ -31,6 +32,10 @@ public static class MauiProgram
 
         builder.Services.AddSingleton<DrugItemDatabase>();
         builder.Services.AddSingleton<DateItemDatabase>();
+
+		builder.Services.AddSingleton<DrugDateEntryPage>();
+		builder.Services.AddSingleton<DrugDateEntryViewModel>();
+		builder.Services.AddTransient<DrugDateEntryItemPage>();
 
 #if DEBUG
         builder.Logging.AddDebug();

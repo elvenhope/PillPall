@@ -1,11 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PillPall.Views.DateItemPage"
-             xmlns:models="clr-namespace:PillPall.Models" xmlns:views="clr-namespace:PillPall.Views"
-             x:DataType="models:DateItem"
-             BackgroundColor="{StaticResource Primary}"
-             Title="{Binding DayOfWeek}">
+             x:Class="PillPall.Views.DrugDateEntryItemPage"
+             xmlns:viewmodel="clr-namespace:PillPall.ViewModels" xmlns:models="clr-namespace:PillPall.Models"
+             x:DataType="viewmodel:DrugDateEntryViewModel"
+             Title="{Binding Item.DayOfWeek}">
     <ScrollView BackgroundColor="{StaticResource Primary}">
         <VerticalStackLayout Padding="20"
                              Spacing="10"
@@ -14,7 +13,7 @@
             <Label Text="Day" />
             <VerticalStackLayout
                 RadioButtonGroup.GroupName="DayOfWeek"
-                RadioButtonGroup.SelectedValue="{Binding DayOfWeek}">
+                RadioButtonGroup.SelectedValue="{Binding Item.DayOfWeek}">
                 <RadioButton Value="Monday" GroupName="DayOfWeek">
                     <RadioButton.Content>
                         <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
@@ -73,7 +72,27 @@
                 </RadioButton>
             </VerticalStackLayout>
             <Label Text="Time" />
-            <TimePicker Time="{Binding Path=Time}"/>
+            <TimePicker Time="{Binding Item.Time}"/>
+            <Label x:Name="CurSelectedDrug" Text="{Binding Item.DrugName, StringFormat='{0} is Currently Selected'}"/>
+            <VerticalStackLayout>
+                <CollectionView
+                    x:Name="Something"
+                    VerticalOptions="Fill"
+                    ItemsSource="{Binding Drugs}"
+                    RadioButtonGroup.GroupName="dd">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="models:DrugItem">
+                             <RadioButton
+                                Value="{Binding ID}"
+                                Content="{Binding Name}"
+                                GroupName="dd"
+                                CheckedChanged="RadioButton_CheckedChanged" />
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </VerticalStackLayout>
+            <Label Text="Dose"/>
+            <Entry Text="{Binding Item.Dose}"/>
             <!--<Label Text="DrugID" />
             <Entry Text="{Binding DrugID}"/>-->
 

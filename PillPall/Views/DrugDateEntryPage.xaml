@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:models="clr-namespace:PillPall.Models"
-             x:Class="PillPall.Views.DateListPage"
-             xmlns:ios="clr-namespace:Microsoft.Maui.Controls.PlatformConfiguration.iOSSpecific;assembly=Microsoft.Maui.Controls"
-             xmlns:views="clr-namespace:PillPall.Views"
-             x:DataType="views:DateListPage"
-             ios:Page.UseSafeArea="True"
+             xmlns:viewmodels="clr-namespace:PillPall.ViewModels" xmlns:models="clr-namespace:PillPall.Models"
+             x:Class="PillPall.Views.DrugDateEntryPage"
+             x:DataType="viewmodels:DrugDateEntryViewModel"
+             Title="Dates"
              BackgroundColor="{StaticResource Primary}">
-    <Grid RowDefinitions="*,Auto">
+     <Grid RowDefinitions="*,Auto">
         <CollectionView 
                   VerticalOptions="Fill"
-                  ItemsSource="{Binding Items}"
+                  ItemsSource="{Binding Dates}"
                   SelectionMode="Single"
                   SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>

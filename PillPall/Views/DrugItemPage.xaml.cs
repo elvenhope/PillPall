@@ -32,6 +32,12 @@ public partial class DrugItemPage : ContentPage
             return;
         }
 
+        if (string.IsNullOrWhiteSpace(Item.Type))
+        {
+            await DisplayAlert("Type Required", "Please select a Type.", "OK");
+            return;
+        }
+
         await database.SaveItemAsync(Item);
         await Shell.Current.GoToAsync("..");
     }

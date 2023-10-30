@@ -72,6 +72,18 @@ namespace PillPall.ViewModels
                 return;
             }
 
+            if (string.IsNullOrWhiteSpace(Item.DrugName))
+            {
+                await Application.Current.MainPage.DisplayAlert("Drug Required", "Please choose a drug.", "OK");
+                return;
+            }
+
+            if (string.IsNullOrWhiteSpace(Item.Dose))
+            {
+                await Application.Current.MainPage.DisplayAlert("Dose Required", "Please write the dose.", "OK");
+                return;
+            }
+
             await dateDB.SaveItemAsync(Item);
             await Shell.Current.GoToAsync("..");
         }

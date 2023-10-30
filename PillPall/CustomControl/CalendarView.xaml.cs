@@ -116,8 +116,8 @@ public partial class CalendarView : StackLayout
     {
         _tempDate = DateTime.Now;
         SelectedDate = DateTime.Now;
-        OnDateSelected?.Invoke(null, DateTime.Now);
-        SelectedDateCommand?.Execute(DateTime.Now);
+        OnDateSelected?.Invoke(null, SelectedDate);
+        SelectedDateCommand?.Execute(SelectedDate);
         BindDates(_tempDate);
     });
     #endregion

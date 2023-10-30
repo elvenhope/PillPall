@@ -14,9 +14,11 @@
                   SelectionChanged="CollectionView_SelectionChanged">
             <CollectionView.ItemTemplate>
                 <DataTemplate x:DataType="models:DateItem">
-                    <HorizontalStackLayout Padding="20">
-                        <Label Text="{Binding ID, StringFormat='{0}.'}"/>
+                    <HorizontalStackLayout Padding="20" Spacing="10">
                         <Label Text="{Binding DayOfWeek}" VerticalTextAlignment="Center"/>
+                        <Label Text="{Binding Time, StringFormat='{}{0:hh}:{0:mm}'}"/>
+                        <Label Text="{Binding DrugName}" VerticalTextAlignment="Center"/>
+                        <Label Text="{Binding Dose}" VerticalTextAlignment="Center"/>
                     </HorizontalStackLayout>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

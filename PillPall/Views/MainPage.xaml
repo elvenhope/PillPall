@@ -2,6 +2,8 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:customcontrol="clr-namespace:PillPall.CustomControl"
+             xmlns:viewmodels="clr-namespace:PillPall.ViewModels" xmlns:models="clr-namespace:PillPall.Models"
+             x:DataType="viewmodels:MainViewModel"
              x:Class="PillPall.Views.MainPage"
              BackgroundColor="{StaticResource Primary}">
     <VerticalStackLayout
@@ -14,7 +16,32 @@
             HorizontalOptions="Center"
             FontSize="{StaticResource HeaderFontSize}"/>
 
-        <customcontrol:CalendarView x:Name="cal" OnDateSelected="cal_OnDateSelected"/>
+        <customcontrol:CalendarView
+            x:Name="Cal"
+            SelectedDate="{Binding SelectedDate}"
+            OnDateSelected="Cal_OnDateSelected"/>
+
+        <Label
+            Text="{Binding SelectedDate, StringFormat='{0:dddddd} Medication'}"
+            HorizontalTextAlignment="Center"
+            FontSize="24"/>
+
+        <CollectionView 
+                  VerticalOptions="Fill"
+                  ItemsSource="{Binding Dates}"
+                  EmptyView="No medications for this day">
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:DateItem">
+                    <HorizontalStackLayout Padding="20" Spacing="10">
+                        <Label Text="{Binding Time, StringFormat='{}{0:hh}:{0:mm}'}"/>
+                        <Label Text="{Binding DrugName}"/>
+                        <Label Text="{Binding Dose}"/>
+                        <!--<Label Text="{Binding DayOfWeek}" VerticalTextAlignment="Center"/>-->
+                    </HorizontalStackLayout>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
 
     </VerticalStackLayout>
 </ContentPage>

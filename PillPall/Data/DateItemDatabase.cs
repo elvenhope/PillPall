@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using PillPall.Models;
 using SQLite;
 
@@ -37,6 +38,15 @@ namespace PillPall.Data
         {
             await Init();
             return await Database.Table<DateItem>().Where(i => i.ID == id).FirstOrDefaultAsync();
+        }
+
+        public async Task<List<DateItem>> GetSpecificDayAsync(string WeekDay)
+        {
+            await Init();
+            //return await Database.Table<DateItem>()
+            //    .Where(i => i.DayOfWeek == WeekDay))
+            //    .ToListAsync();
+            return await Database.QueryAsync<DateItem>("SELECT * FROM [DateItem] WHERE [DayOfWeek] = '" + WeekDay + "' ORDER BY [Time]");
         }
 
         public async Task<int> SaveItemAsync(DateItem item)

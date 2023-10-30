@@ -14,62 +14,13 @@
             <VerticalStackLayout
                 RadioButtonGroup.GroupName="DayOfWeek"
                 RadioButtonGroup.SelectedValue="{Binding Item.DayOfWeek}">
-                <RadioButton Value="Monday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Monday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Tuesday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Tuesday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Wednesday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Wednesday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Thursday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Thursday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Friday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Friday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Saturday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Saturday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
-                <RadioButton Value="Sunday" GroupName="DayOfWeek">
-                    <RadioButton.Content>
-                        <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                            <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Sunday"/>
-                        </HorizontalStackLayout>
-                    </RadioButton.Content>
-                </RadioButton>
+                <RadioButton Value="Monday" GroupName="DayOfWeek" Content="Monday"/>
+                <RadioButton Value="Tuesday" GroupName="DayOfWeek" Content="Tuesday"/>
+                <RadioButton Value="Wednesday" GroupName="DayOfWeek" Content="Wednesday"/>
+                <RadioButton Value="Thursday" GroupName="DayOfWeek" Content="Thursday"/>
+                <RadioButton Value="Friday" GroupName="DayOfWeek" Content="Friday"/>
+                <RadioButton Value="Saturday" GroupName="DayOfWeek" Content="Saturday"/>
+                <RadioButton Value="Sunday" GroupName="DayOfWeek" Content="Sunday"/>
             </VerticalStackLayout>
             <Label Text="Time" />
             <TimePicker Time="{Binding Item.Time}"/>

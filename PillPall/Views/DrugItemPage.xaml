@@ -17,78 +17,15 @@
             <VerticalStackLayout
                 RadioButtonGroup.GroupName="DrugType"
                 RadioButtonGroup.SelectedValue="{Binding Type}">
-                    <RadioButton Value="Tablets and Capsules" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Tablets and Capsules"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Syrup" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Syrup"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Injections" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Injections"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Nasal Spray" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Nasal Spray"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Inhalers" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Inhalers"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Suppositories" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Suppositories"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Eye Drops" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Eye Drops"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Ear Drops" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Ear Drops"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
-                    <RadioButton Value="Lozenges" GroupName="DrugType">
-                        <RadioButton.Content>
-                            <HorizontalStackLayout Padding="5,0,0,0" VerticalOptions="Center">
-                                <Label FontSize="{StaticResource ParagraphFontSize}"
-                                       Text="Lozenges"/>
-                            </HorizontalStackLayout>
-                        </RadioButton.Content>
-                    </RadioButton>
+                    <RadioButton Value="Tablets and Capsules" GroupName="DrugType" Content="Tablets and Capsules"/>
+                    <RadioButton Value="Syrup" GroupName="DrugType" Content="Syrup"/>
+                    <RadioButton Value="Injections" GroupName="DrugType" Content="Injections"/>
+                    <RadioButton Value="Nasal Spray" GroupName="DrugType" Content="Nasal Spray"/>
+                    <RadioButton Value="Inhalers" GroupName="DrugType" Content="Inhalers"/>
+                    <RadioButton Value="Suppositories" GroupName="DrugType" Content="Suppositories"/>
+                    <RadioButton Value="Eye Drops" GroupName="DrugType" Content="Eye Drops"/>
+                    <RadioButton Value="Ear Drops" GroupName="DrugType" Content="Ear Drops"/>
+                    <RadioButton Value="Lozenges" GroupName="DrugType" Content="Lozenges"/>
             </VerticalStackLayout>
             <!--<Label Text="Dosage" />
             <Entry Text="{Binding Dosage}" />

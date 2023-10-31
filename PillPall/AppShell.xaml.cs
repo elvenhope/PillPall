@@ -8,7 +8,6 @@ public partial class AppShell : Shell
 	{
 		InitializeComponent();
         Routing.RegisterRoute(nameof(DrugItemPage), typeof(DrugItemPage));
-        Routing.RegisterRoute(nameof(DateItemPage), typeof(DateItemPage));
         Routing.RegisterRoute(nameof(DrugDateEntryItemPage), typeof(DrugDateEntryItemPage));
     }
 }
